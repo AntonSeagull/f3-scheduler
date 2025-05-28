@@ -185,13 +185,15 @@ class Schedule
                 }
             }
 
-            try {
-                $task['function']();
-            } catch (Exception $exception) {
-                if (is_callable(self::$errorHandler)) {
-                    call_user_func(self::$errorHandler, $exception);
-                } else {
-                    error_log($exception);
+            if (isset($task['function'])) {
+                try {
+                    $task['function']();
+                } catch (Exception $exception) {
+                    if (is_callable(self::$errorHandler)) {
+                        call_user_func(self::$errorHandler, $exception);
+                    } else {
+                        error_log($exception);
+                    }
                 }
             }
         }
