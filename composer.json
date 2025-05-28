@@ -1,0 +1,23 @@
+{
+    "name": "antonchaikin/f3-scheduler",
+    "description": "Cron-based task scheduler for the Fat-Free Framework (F3)",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Chaikin",
+            "email": "hi@antonseagull.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "F3Scheduler\\": "src/F3Scheduler/"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "bcosca/fatfree": "*",
+        "poliander/cron": "^3.1"
+    },
+    "minimum-stability": "stable"
+}
